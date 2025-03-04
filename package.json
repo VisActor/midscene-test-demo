@@ -1,0 +1,30 @@
+{
+  "name": "visactor-midscene-test-demo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "http-server": "http-server ./ -p 8080",
+    "test-vtable": "tsx test/vtable-test.ts",
+    "start-test-vtable": "concurrently --kill-others --success first \"npm run http-server\" \"wait-on -t 10000 http://127.0.0.1:8080 && npm run test-vtable\"",
+    "test-vchart": "tsx test/vchart-test.ts",
+    "start-test-vchart": "concurrently --kill-others --success first \"npm run http-server\" \"wait-on -t 10000 http://127.0.0.1:8080 && npm run test-vchart\""
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@midscene/web": "0.12.4",
+    "puppeteer": "24.3.1",
+    "dotenv": "16.4.7",
+    "tsx": "4.19.3",
+    "http-server": "14.1.1",
+    "concurrently": "9.1.2",
+    "wait-on": "8.0.2",
+    "pngjs": "7.0.0",
+    "pixelmatch": "7.1.0"
+  },
+  "devDependencies": {
+    "@types/pngjs": "6.0.5"
+  }
+}
